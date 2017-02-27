@@ -1,0 +1,166 @@
+.imgPlay{
+	width: 665px;
+	height: 191px;
+	margin: 0 auto;
+	background: #DBDBDB;
+	overflow: hidden;
+	position: relative;
+	font-family: "Microsoft Yahei";
+}
+.imgPlay_wrap{
+	margin-left: -10px;
+	overflow: hidden;
+	height: 160px;
+}
+.imgPlay_wrap img{
+	width: 125px;
+	height: 140px;
+	display: block;
+}
+.imgPlay_wrap li{
+	margin-left: 10px;
+	float: left;
+}
+.imgPlay_wrap li p{
+	display: block;
+	text-align: center;
+	height: 20px;
+	background: #1b1b1b;
+	color: #fff;
+	font-size: 12px;
+}
+
+/*切换按钮*/
+.imgPlay_tab{
+	text-align: right;
+}
+.imgPlay_tab ul{
+	margin: 5px 0;
+}
+.imgPlay_tab ul li{
+	background: #fff;
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-left: 5px;
+}
+.imgPlay_tab ul li.cur{
+	background: #338530;
+}
+
+/**/
+.imgPlay .prev, .imgPlay .next{
+	text-decoration: none;
+	position: absolute;
+	top: 5px;
+	background: #666;
+	display: inline-block;
+	padding: 0px 10px;
+	color: #f0f0f0;
+	line-height: 20px;
+	height: 20px;
+	font-size: 13px;
+	border-radius: 3px;
+}
+.imgPlay .prev:hover, .imgPlay .next:hover{
+	background: #333;
+}
+.imgPlay .prev{
+	left: 0px;
+}
+.imgPlay .next{
+	left: 55px;
+}
+
+/*rolling滚动*/
+.imgPlay .rollLeft{
+	width: 10000px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.imgPlay .tab ul{
+	display: none;
+}
+/*fading 淡入淡出*/
+.imgPlay .fadeOutIn{
+	position: relative;
+}
+.imgPlay .fadeOutIn ul{
+	position: absolute;
+}
+/*上下翻滚*/
+.imgPlay .rollUp {
+	position: absolute;
+	height: auto;
+	overflow: visible;
+	top: 0;
+	left: 0;
+}
+.imgPlay .imgPlay_scroll{
+	overflow: hidden;
+	position: relative;
+	height: 160px;
+}
+
+/*css3 动画*/
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/*.fadeOut {
+  -webkit-animation:fadeOut 0.5s; 
+  animation:fadeOut 0.5s;
+}*/
+
+/**/
+.rollLeftCss
+{
+	animation:rollLeftCss 5s;
+	-moz-animation:rollLeftCss 5s; /* Firefox */
+	-webkit-animation:rollLeftCss 5s; /* Safari and Chrome */
+	-o-animation:rollLeftCss 5s; /* Opera */
+}
+
+@keyframes rollLeftCss
+{
+	0%   {left:0px;}
+	100% {left:100px;}
+}
+
+@-moz-keyframes rollLeftCss /* Firefox */
+{
+	0%   {left:0px;}
+	100% {left:100px;}
+}
+
+@-webkit-keyframes rollLeftCss /* Safari and Chrome */
+{
+	0%   {left:0px;}
+	100% {left:100px;}
+}
+
+@-o-keyframes rollLeftCss /* Opera */
+{
+	0%   {left:0px;}
+	100% {left:100px;}
+}

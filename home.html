@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+	<head>
+		<title>图片工厂</title>
+		<meta charset="utf-8">
+		<link href="http://static.qhimg.com/!c957e3af/reset.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="home.css">
+		<link rel="stylesheet" type="text/css" href="player.css">
+		<script src="http://s0.qhimg.com/lib/jquery/183.js"></script>
+	</head>
+	<body>
+		<section id="factory" class="factory">
+			<form>
+				类型(type):<select name="type">
+					<option value="fadeOutIn">淡入淡出</option>
+					<option value="rollLeft">左滚</option>
+					<option value="rollUp">上滚</option>
+					<option value="tab">简单</option>
+				</select>
+				自动切换(autoPlay):<select name="autoPlay">
+					<option value="1">是</option>
+					<option value="0">否</option>
+				</select>
+				速度(speed):<input type="test" value="0.7" name="speed"/><span>秒(s)</span>
+				时间间隔(time):<input type="test" value="3" name="time"/><span>秒(s)</span><br/><br/>
+				单图大小:<input type="test" value="140" name="height"/><span>宽(width)</span>
+				<input type="test" value="125" name="width"/><span>高(height)</span>
+				单图个数:<input type="test" value="5" name="picNum"/><span>个/屏</span><br/><br/>
+				上间距(top):<input type="test" value="0" name="mt"/><span>(px)</span>
+				左间距(left):<input type="test" value="10" name="ml"/><span>(px)</span>
+				<input type="button" value="预览" name="preview"/>
+			</form>
+		</section>
+		<!--  -->
+		<iframe src="playerFactory.html?type=fadeOutIn&time=3&speed=0.7&autoPlay=1&width=125&height=140&picNum=5&mt=0&ml=10" id="iframeFactory" name="iframeFactory" style="height:800px;"></iframe>
+		<script type="text/javascript">
+			(function(){
+				var $iframe = $("#iframeFactory"),
+					$factory = $("#factory"),
+					$form = $("form");
+
+				var bindFuns = {
+					'preview': function(urlString){
+						var iframeSrc = 'playerFactory.html?' + urlString;
+						$iframe.attr('src', iframeSrc);
+					}
+			    };
+
+			    $factory.on('click', 'input[type=button]', function(e){
+			    	var urlString = $form.serialize();
+			    	bindFuns.preview(urlString);
+			    });
+
+				// function autoIframe(){
+				// 	var iframe = $iframe[0];
+				// 	try{
+				// 		console.log(iframe.contentWindow.document.documentElement.scrollHeight);
+				// 		iframe.height = iframe.contentWindow.document.documentElement.scrollHeight + 180;
+				// 	}catch (ex){}
+				// }
+				// autoIframe();
+			})();
+		</script>
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+body{
+	background: url(image/bg.png);
+}
+.factory {
+	width: 980px;
+	margin: 0 auto;
+	font-size: 14px;
+	font-family: 'Micrsoft Yahei';
+	color: #000;
+	margin-top: 50px;
+}
+.factory span{
+	font-size: 12px;
+}
+.factory select{
+	font-size: 12px;
+	margin:0 15px 0 5px;
+}
+.factory input{
+	width: 50px;
+	text-align: center;
+	font-size: 12px;
+	margin: 0 5px;
+}
+iframe{
+	border: none;
+	overflow: hidden;
+	width: 100%;
+	margin-top: 60px;
+}
